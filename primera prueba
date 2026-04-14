@@ -1,0 +1,1414 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dra. Valentina Ríos — Psicología & Bienestar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #F7F3EE;
+    --warm-white: #FDFAF6;
+    --sage: #8A9E7F;
+    --sage-light: #B8C9AE;
+    --sage-dark: #5C7252;
+    --terracotta: #C07B5A;
+    --terracotta-light: #D9A088;
+    --terracotta-dark: #9A5A3A;
+    --olive: #6B7A4A;
+    --charcoal: #2C2C2A;
+    --mid-gray: #6B6B68;
+    --light-gray: #E8E4DE;
+    --font-display: 'Cormorant Garamond', serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: var(--font-body);
+    background: var(--warm-white);
+    color: var(--charcoal);
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 60px;
+    background: rgba(253,250,246,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--light-gray);
+    transition: padding .3s;
+  }
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--charcoal);
+    text-decoration: none;
+    letter-spacing: .02em;
+  }
+  .nav-logo span { color: var(--terracotta); }
+  .nav-links { display: flex; gap: 36px; list-style: none; }
+  .nav-links a {
+    font-size: .85rem;
+    font-weight: 400;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--mid-gray);
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .nav-links a:hover { color: var(--terracotta); }
+  .nav-cta {
+    background: var(--terracotta);
+    color: white !important;
+    padding: 10px 22px;
+    border-radius: 30px;
+    transition: background .2s !important;
+  }
+  .nav-cta:hover { background: var(--terracotta-dark) !important; color: white !important; }
+
+  /* ── HERO ── */
+  #home {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 80px;
+    overflow: hidden;
+  }
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 80px 60px 80px 80px;
+    position: relative;
+  }
+  .hero-eyebrow {
+    font-size: .75rem;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--sage-dark);
+    margin-bottom: 24px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block; width: 32px; height: 1px;
+    background: var(--sage-dark);
+  }
+  .hero-headline {
+    font-family: var(--font-display);
+    font-size: clamp(2.8rem, 4.5vw, 5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--charcoal);
+    margin-bottom: 28px;
+  }
+  .hero-headline em {
+    font-style: italic;
+    color: var(--terracotta);
+  }
+  .hero-sub {
+    font-size: 1rem;
+    color: var(--mid-gray);
+    max-width: 420px;
+    margin-bottom: 48px;
+    font-weight: 300;
+    line-height: 1.8;
+  }
+  .btn-primary {
+    display: inline-block;
+    background: var(--terracotta);
+    color: white;
+    padding: 16px 38px;
+    border-radius: 40px;
+    font-size: .9rem;
+    font-weight: 500;
+    letter-spacing: .04em;
+    text-decoration: none;
+    transition: transform .2s, background .2s, box-shadow .2s;
+    box-shadow: 0 4px 20px rgba(192,123,90,.3);
+    margin-right: 16px;
+  }
+  .btn-primary:hover {
+    background: var(--terracotta-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 28px rgba(192,123,90,.4);
+  }
+  .btn-outline {
+    display: inline-block;
+    border: 1.5px solid var(--sage);
+    color: var(--sage-dark);
+    padding: 15px 32px;
+    border-radius: 40px;
+    font-size: .9rem;
+    font-weight: 400;
+    letter-spacing: .04em;
+    text-decoration: none;
+    transition: all .2s;
+  }
+  .btn-outline:hover {
+    background: var(--sage-light);
+    border-color: var(--sage-dark);
+  }
+  .hero-right {
+    position: relative;
+    background: var(--sage-light);
+    overflow: hidden;
+  }
+  .hero-photo-placeholder {
+    width: 100%; height: 100%;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 16px;
+    background: linear-gradient(160deg, #C9D9C0 0%, #A8BFA0 40%, #8EA87E 100%);
+  }
+  .hero-photo-placeholder svg { opacity: .25; }
+  .hero-photo-note {
+    font-size: .75rem;
+    color: white;
+    opacity: .6;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  .hero-badge {
+    position: absolute;
+    bottom: 40px; left: -24px;
+    background: white;
+    border-radius: 16px;
+    padding: 20px 24px;
+    box-shadow: 0 8px 32px rgba(0,0,0,.1);
+    display: flex; align-items: center; gap: 14px;
+    min-width: 200px;
+  }
+  .badge-icon {
+    width: 44px; height: 44px;
+    background: var(--cream);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.3rem;
+  }
+  .badge-text strong {
+    display: block;
+    font-size: .9rem;
+    font-weight: 500;
+    color: var(--charcoal);
+  }
+  .badge-text span {
+    font-size: .75rem;
+    color: var(--mid-gray);
+  }
+  .hero-scroll {
+    position: absolute;
+    bottom: 40px; left: 80px;
+    display: flex; align-items: center; gap: 10px;
+    font-size: .75rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--mid-gray);
+  }
+  .scroll-line {
+    width: 40px; height: 1px;
+    background: var(--mid-gray);
+    animation: scrollLine 2s ease-in-out infinite;
+  }
+  @keyframes scrollLine {
+    0%, 100% { width: 40px; opacity: 1; }
+    50% { width: 60px; opacity: .5; }
+  }
+
+  /* ── SECTION COMMONS ── */
+  section { padding: 100px 80px; }
+  .section-tag {
+    display: inline-block;
+    font-size: .7rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 3.5vw, 3.2rem);
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--charcoal);
+    margin-bottom: 20px;
+  }
+  .section-title em { font-style: italic; color: var(--terracotta); }
+  .section-lead {
+    font-size: 1rem;
+    color: var(--mid-gray);
+    max-width: 560px;
+    font-weight: 300;
+    line-height: 1.85;
+  }
+
+  /* ── SOBRE MÍ ── */
+  #sobre-mi { background: var(--cream); }
+  .about-grid {
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 80px;
+    align-items: start;
+    margin-top: 60px;
+  }
+  .about-photo {
+    position: relative;
+  }
+  .about-photo-frame {
+    width: 100%;
+    aspect-ratio: 3/4;
+    background: linear-gradient(155deg, var(--sage-light) 0%, var(--sage) 100%);
+    border-radius: 24px 24px 80px 24px;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .about-photo-frame::after {
+    content: '';
+    position: absolute;
+    bottom: -20px; right: -20px;
+    width: 160px; height: 160px;
+    border: 2px solid var(--terracotta-light);
+    border-radius: 50%;
+    opacity: .4;
+  }
+  .about-photo-note-text {
+    font-size: .7rem;
+    color: rgba(255,255,255,.5);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+  }
+  .about-credentials {
+    display: flex; flex-direction: column; gap: 12px;
+    margin-top: 24px;
+  }
+  .credential-item {
+    display: flex; align-items: center; gap: 12px;
+    font-size: .85rem;
+    color: var(--mid-gray);
+  }
+  .credential-dot {
+    width: 6px; height: 6px;
+    background: var(--terracotta);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .about-content h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--charcoal);
+    margin: 40px 0 14px;
+  }
+  .about-content h3:first-child { margin-top: 0; }
+  .about-content p {
+    font-size: .95rem;
+    color: var(--mid-gray);
+    line-height: 1.85;
+    font-weight: 300;
+    margin-bottom: 16px;
+  }
+  .values-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 16px; margin-top: 24px;
+  }
+  .value-card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    border: 1px solid var(--light-gray);
+  }
+  .value-card strong {
+    display: block;
+    font-size: .85rem;
+    font-weight: 500;
+    color: var(--charcoal);
+    margin-bottom: 6px;
+  }
+  .value-card p {
+    font-size: .8rem;
+    margin: 0 !important;
+  }
+
+  /* ── SERVICIOS ── */
+  #servicios { background: var(--warm-white); }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 60px;
+  }
+  .service-card {
+    background: white;
+    border-radius: 24px;
+    padding: 40px 32px;
+    border: 1px solid var(--light-gray);
+    position: relative;
+    overflow: hidden;
+    transition: transform .25s, box-shadow .25s;
+  }
+  .service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 48px rgba(0,0,0,.08);
+  }
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--terracotta);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .3s;
+  }
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-icon {
+    width: 52px; height: 52px;
+    background: var(--cream);
+    border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 24px;
+  }
+  .service-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--charcoal);
+    margin-bottom: 12px;
+  }
+  .service-card p {
+    font-size: .88rem;
+    color: var(--mid-gray);
+    line-height: 1.75;
+    font-weight: 300;
+    margin-bottom: 20px;
+  }
+  .service-tag {
+    display: inline-block;
+    font-size: .7rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 20px;
+    margin-right: 6px;
+    margin-bottom: 6px;
+  }
+  .tag-online { background: #E8F0E8; color: var(--sage-dark); }
+  .tag-presencial { background: #F5EAE4; color: var(--terracotta-dark); }
+  .tag-adultos { background: #EEF0E8; color: var(--olive); }
+  .tag-parejas { background: #F5EAE4; color: var(--terracotta-dark); }
+
+  /* ── ENFOQUES ── */
+  #enfoques { background: var(--charcoal); color: white; }
+  #enfoques .section-title { color: white; }
+  #enfoques .section-lead { color: rgba(255,255,255,.55); }
+  .enfoques-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-top: 60px;
+  }
+  .enfoque-card {
+    background: rgba(255,255,255,.05);
+    border: 1px solid rgba(255,255,255,.1);
+    border-radius: 20px;
+    padding: 36px;
+    transition: background .25s;
+    cursor: default;
+  }
+  .enfoque-card:hover { background: rgba(255,255,255,.09); }
+  .enfoque-number {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--terracotta-light);
+    opacity: .5;
+    line-height: 1;
+    margin-bottom: 16px;
+  }
+  .enfoque-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: white;
+    margin-bottom: 12px;
+  }
+  .enfoque-card p {
+    font-size: .88rem;
+    color: rgba(255,255,255,.55);
+    line-height: 1.8;
+    font-weight: 300;
+    margin-bottom: 20px;
+  }
+  .enfoque-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+  .enfoque-pill {
+    font-size: .7rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border-radius: 20px;
+    background: rgba(192,123,90,.15);
+    color: var(--terracotta-light);
+    border: 1px solid rgba(192,123,90,.25);
+  }
+
+  /* ── PODCAST ── */
+  #podcast { background: var(--cream); }
+  .podcast-header {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 48px;
+  }
+  .podcast-episodes { display: flex; flex-direction: column; gap: 20px; }
+  .episode-card {
+    display: grid;
+    grid-template-columns: 64px 1fr auto;
+    align-items: center;
+    gap: 24px;
+    background: white;
+    border-radius: 18px;
+    padding: 28px 32px;
+    border: 1px solid var(--light-gray);
+    transition: box-shadow .2s;
+  }
+  .episode-card:hover { box-shadow: 0 8px 30px rgba(0,0,0,.07); }
+  .ep-number {
+    font-family: var(--font-display);
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: var(--terracotta-light);
+    text-align: center;
+    line-height: 1;
+  }
+  .ep-info h4 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--charcoal);
+    margin-bottom: 6px;
+  }
+  .ep-info p {
+    font-size: .85rem;
+    color: var(--mid-gray);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+  .ep-meta {
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .ep-duration {
+    font-size: .75rem;
+    color: var(--mid-gray);
+    letter-spacing: .06em;
+    margin-bottom: 10px;
+  }
+  .play-btn {
+    width: 40px; height: 40px;
+    background: var(--terracotta);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer;
+    transition: transform .2s, background .2s;
+    border: none;
+  }
+  .play-btn:hover { transform: scale(1.1); background: var(--terracotta-dark); }
+  .play-btn svg { margin-left: 2px; }
+
+  /* ── CURSOS ── */
+  #cursos { background: var(--warm-white); }
+  .cursos-intro {
+    background: var(--sage-light);
+    border-radius: 24px;
+    padding: 48px;
+    margin: 60px 0 48px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 40px;
+  }
+  .flow-steps { display: flex; gap: 0; margin-top: 40px; }
+  .flow-step {
+    flex: 1;
+    display: flex; flex-direction: column; align-items: center;
+    text-align: center;
+    position: relative;
+  }
+  .flow-step:not(:last-child)::after {
+    content: '→';
+    position: absolute;
+    right: -12px; top: 18px;
+    color: var(--terracotta);
+    font-size: 1.2rem;
+  }
+  .flow-icon {
+    width: 48px; height: 48px;
+    background: white;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.08);
+  }
+  .flow-step span {
+    font-size: .78rem;
+    color: var(--sage-dark);
+    font-weight: 500;
+    letter-spacing: .04em;
+  }
+  .cursos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .curso-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--light-gray);
+    transition: transform .25s, box-shadow .25s;
+  }
+  .curso-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,.09);
+  }
+  .curso-thumb {
+    height: 160px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 3rem;
+    position: relative;
+  }
+  .curso-thumb-1 { background: linear-gradient(135deg, #E8D5C4, #D4B8A0); }
+  .curso-thumb-2 { background: linear-gradient(135deg, #C9D9C0, #A8BFA0); }
+  .curso-thumb-3 { background: linear-gradient(135deg, #D9C5D0, #C0A8B5); }
+  .curso-badge {
+    position: absolute;
+    top: 12px; right: 12px;
+    background: white;
+    border-radius: 8px;
+    padding: 4px 10px;
+    font-size: .7rem;
+    font-weight: 500;
+    color: var(--charcoal);
+  }
+  .curso-body { padding: 28px; }
+  .curso-body h3 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--charcoal);
+    margin-bottom: 8px;
+  }
+  .curso-body p {
+    font-size: .83rem;
+    color: var(--mid-gray);
+    line-height: 1.7;
+    font-weight: 300;
+    margin-bottom: 20px;
+  }
+  .curso-footer {
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .curso-price {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 300;
+    color: var(--terracotta);
+  }
+  .curso-price sup { font-size: .9rem; }
+  .btn-small {
+    background: var(--charcoal);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 24px;
+    font-size: .78rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: background .2s;
+  }
+  .btn-small:hover { background: var(--terracotta); }
+
+  /* ── ARTÍCULOS ── */
+  #articulos { background: var(--cream); }
+  .articulos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+  }
+  .articulo-card {
+    background: white;
+    border-radius: 20px;
+    padding: 32px;
+    border: 1px solid var(--light-gray);
+    transition: transform .2s, box-shadow .2s;
+    text-decoration: none;
+    display: block;
+  }
+  .articulo-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 36px rgba(0,0,0,.08);
+  }
+  .art-category {
+    font-size: .68rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+  .articulo-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--charcoal);
+    line-height: 1.35;
+    margin-bottom: 12px;
+  }
+  .articulo-card p {
+    font-size: .83rem;
+    color: var(--mid-gray);
+    line-height: 1.75;
+    font-weight: 300;
+    margin-bottom: 20px;
+  }
+  .art-meta {
+    font-size: .75rem;
+    color: var(--mid-gray);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .art-meta::before {
+    content: '';
+    display: block;
+    width: 20px; height: 1px;
+    background: var(--terracotta-light);
+  }
+
+  /* ── CONTACTO ── */
+  #contacto { background: var(--warm-white); }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    margin-top: 60px;
+  }
+  .contact-info h3 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--charcoal);
+    margin: 36px 0 10px;
+  }
+  .contact-info h3:first-child { margin-top: 0; }
+  .contact-info p {
+    font-size: .9rem;
+    color: var(--mid-gray);
+    line-height: 1.75;
+    font-weight: 300;
+  }
+  .contact-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    margin-top: 16px;
+    padding: 14px 24px;
+    border-radius: 32px;
+    font-size: .88rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: transform .2s, box-shadow .2s;
+  }
+  .contact-link:hover { transform: translateY(-2px); }
+  .wa-link {
+    background: #25D366;
+    color: white;
+    box-shadow: 0 4px 16px rgba(37,211,102,.3);
+  }
+  .wa-link:hover { box-shadow: 0 8px 24px rgba(37,211,102,.4); }
+  .social-links { display: flex; gap: 12px; margin-top: 20px; }
+  .social-link {
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    background: var(--cream);
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: var(--charcoal);
+    border: 1px solid var(--light-gray);
+    transition: background .2s, transform .2s;
+  }
+  .social-link:hover { background: var(--terracotta); color: white; transform: translateY(-3px); }
+
+  /* FORM */
+  .contact-form { display: flex; flex-direction: column; gap: 16px; }
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+  .form-group label {
+    font-size: .78rem;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--mid-gray);
+    font-weight: 400;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 14px 18px;
+    border: 1.5px solid var(--light-gray);
+    border-radius: 12px;
+    font-family: var(--font-body);
+    font-size: .9rem;
+    color: var(--charcoal);
+    background: var(--cream);
+    transition: border-color .2s;
+    outline: none;
+    resize: vertical;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--terracotta); }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .btn-submit {
+    background: var(--terracotta);
+    color: white;
+    border: none;
+    padding: 16px 36px;
+    border-radius: 40px;
+    font-family: var(--font-body);
+    font-size: .9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background .2s, transform .2s;
+    align-self: flex-start;
+    letter-spacing: .04em;
+  }
+  .btn-submit:hover { background: var(--terracotta-dark); transform: translateY(-2px); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--charcoal);
+    color: rgba(255,255,255,.5);
+    padding: 48px 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .footer-logo {
+    font-family: var(--font-display);
+    font-size: 1.4rem;
+    color: white;
+    font-weight: 400;
+  }
+  .footer-logo span { color: var(--terracotta-light); }
+  footer p { font-size: .8rem; }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a {
+    font-size: .78rem;
+    color: rgba(255,255,255,.4);
+    text-decoration: none;
+    transition: color .2s;
+  }
+  .footer-links a:hover { color: var(--terracotta-light); }
+
+  /* ── DIVIDER ── */
+  .divider {
+    width: 60px; height: 2px;
+    background: var(--terracotta-light);
+    margin: 20px 0 32px;
+  }
+
+  /* ── QUOTE BANNER ── */
+  .quote-banner {
+    background: var(--terracotta);
+    padding: 60px 80px;
+    text-align: center;
+  }
+  .quote-banner blockquote {
+    font-family: var(--font-display);
+    font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+    font-weight: 300;
+    font-style: italic;
+    color: white;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+  .quote-banner cite {
+    display: block;
+    margin-top: 20px;
+    font-family: var(--font-body);
+    font-size: .8rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.65);
+    font-style: normal;
+  }
+
+  /* animations */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .6s ease, transform .6s ease;
+  }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    section { padding: 70px 24px; }
+    #home { grid-template-columns: 1fr; }
+    .hero-right { height: 50vh; }
+    .hero-left { padding: 60px 24px; }
+    .hero-scroll { display: none; }
+    .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    .services-grid, .cursos-grid, .articulos-grid { grid-template-columns: 1fr; }
+    .enfoques-grid { grid-template-columns: 1fr; }
+    .episode-card { grid-template-columns: 1fr; gap: 12px; }
+    footer { flex-direction: column; gap: 20px; text-align: center; }
+    .form-row { grid-template-columns: 1fr; }
+    .flow-steps { flex-direction: column; gap: 16px; }
+    .flow-step:not(:last-child)::after { display: none; }
+    .cursos-intro { grid-template-columns: 1fr; }
+    .quote-banner { padding: 48px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══ NAV ══ -->
+<nav>
+  <a href="#home" class="nav-logo">Valentina <span>Ríos</span></a>
+  <ul class="nav-links">
+    <li><a href="#sobre-mi">Sobre mí</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#enfoques">Enfoques</a></li>
+    <li><a href="#podcast">Podcast</a></li>
+    <li><a href="#cursos">Cursos</a></li>
+    <li><a href="#articulos">Artículos</a></li>
+    <li><a href="#contacto" class="nav-cta">Reservar sesión</a></li>
+  </ul>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section id="home">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Psicóloga clínica & terapeuta</p>
+    <h1 class="hero-headline">
+      El cambio comienza<br>cuando te <em>acompañan</em><br>de verdad
+    </h1>
+    <p class="hero-sub">
+      Un espacio seguro, sin juicios y profundamente humano para explorar tu mundo interior, sanar heridas y construir una vida más plena.
+    </p>
+    <div>
+      <a href="#contacto" class="btn-primary">Reservar primera sesión</a>
+      <a href="#sobre-mi" class="btn-outline">Conocer más</a>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      Explorar
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-photo-placeholder">
+      <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+        <circle cx="40" cy="28" r="16" fill="white"/>
+        <ellipse cx="40" cy="64" rx="28" ry="18" fill="white"/>
+      </svg>
+      <span class="hero-photo-note">Tu fotografía aquí</span>
+    </div>
+    <div class="hero-badge fade-in">
+      <div class="badge-icon">🌿</div>
+      <div class="badge-text">
+        <strong>+8 años de experiencia</strong>
+        <span>Terapia online y presencial</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ QUOTE ══ -->
+<div class="quote-banner">
+  <blockquote>
+    "No se trata de tener todo resuelto. Se trata de aprender a sostenerte con ternura mientras encontrás tu camino."
+  </blockquote>
+  <cite>— Valentina Ríos</cite>
+</div>
+
+<!-- ══ SOBRE MÍ ══ -->
+<section id="sobre-mi">
+  <p class="section-tag">Sobre mí</p>
+  <h2 class="section-title">Soy Valentina Ríos,<br>psicóloga y <em>acompañante</em></h2>
+  <div class="divider"></div>
+  <div class="about-grid">
+    <div class="about-photo fade-in">
+      <div class="about-photo-frame">
+        <span class="about-photo-note-text">Tu foto profesional</span>
+      </div>
+      <div class="about-credentials">
+        <div class="credential-item">
+          <div class="credential-dot"></div>
+          Lic. en Psicología — UBA (2016)
+        </div>
+        <div class="credential-item">
+          <div class="credential-dot"></div>
+          Posgrado en Terapia Cognitivo-Conductual
+        </div>
+        <div class="credential-item">
+          <div class="credential-dot"></div>
+          Formación en EMDR — Nivel II
+        </div>
+        <div class="credential-item">
+          <div class="credential-dot"></div>
+          Especialización en Vínculos y Familia
+        </div>
+        <div class="credential-item">
+          <div class="credential-dot"></div>
+          Matrícula Nacional N° 12345
+        </div>
+      </div>
+    </div>
+    <div class="about-content fade-in">
+      <h3>Mi historia</h3>
+      <p>Nací con la convicción de que las personas tienen una capacidad enorme de transformación. Estudié psicología porque siempre me fascinó comprender qué mueve a los seres humanos, qué nos duele y, sobre todo, qué nos libera.</p>
+      <p>A lo largo de más de ocho años de trabajo clínico, acompañé a cientos de personas a atravesar crisis, duelos, ansiedades y relaciones difíciles. Y aprendí que el verdadero cambio no viene de las respuestas, sino de las preguntas correctas en el momento justo.</p>
+
+      <h3>Mi enfoque terapéutico</h3>
+      <p>Creo en una psicología integrativa, que mira a la persona en su totalidad — no solo sus síntomas, sino su historia, su cuerpo, sus vínculos y sus sueños. Combino herramientas de distintas corrientes según lo que cada persona necesita.</p>
+      <p>Mi consultorio — físico o virtual — es un espacio sin juicio, donde se puede ser vulnerable y encontrar fortaleza en esa misma vulnerabilidad.</p>
+
+      <h3>Lo que me diferencia</h3>
+      <div class="values-grid">
+        <div class="value-card">
+          <strong>🌱 Presencia real</strong>
+          <p>Estoy con vos, no frente a vos. Cada sesión es única.</p>
+        </div>
+        <div class="value-card">
+          <strong>🔍 Visión integrativa</strong>
+          <p>Combino enfoques según tu necesidad específica.</p>
+        </div>
+        <div class="value-card">
+          <strong>💬 Comunicación clara</strong>
+          <p>Sin jerga técnica. Todo lo que hacemos, lo entendés.</p>
+        </div>
+        <div class="value-card">
+          <strong>✨ Foco en el potencial</strong>
+          <p>No me quedo en el problema. Trabajo con tus recursos.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SERVICIOS ══ -->
+<section id="servicios">
+  <p class="section-tag">Servicios</p>
+  <h2 class="section-title">¿En qué puedo<br><em>acompañarte</em>?</h2>
+  <p class="section-lead">Ofrezco distintas modalidades de trabajo terapéutico, adaptadas a lo que cada persona y momento de vida requiere.</p>
+  <div class="services-grid">
+    <div class="service-card fade-in">
+      <div class="service-icon">🧠</div>
+      <h3>Terapia individual</h3>
+      <p>Un espacio personal para explorar tus emociones, pensamientos y patrones. Trabajamos juntos para comprender tu historia y construir nuevas formas de relacionarte con vos mismo y con el mundo.</p>
+      <div>
+        <span class="service-tag tag-online">Online</span>
+        <span class="service-tag tag-presencial">Presencial</span>
+        <span class="service-tag tag-adultos">Adultos</span>
+      </div>
+    </div>
+    <div class="service-card fade-in">
+      <div class="service-icon">💞</div>
+      <h3>Terapia de pareja</h3>
+      <p>Para parejas que quieren mejorar su comunicación, atravesar una crisis o simplemente crecer juntos. Trabajo con un enfoque no evaluativo, donde ambos tienen voz y espacio.</p>
+      <div>
+        <span class="service-tag tag-online">Online</span>
+        <span class="service-tag tag-presencial">Presencial</span>
+        <span class="service-tag tag-parejas">Parejas</span>
+      </div>
+    </div>
+    <div class="service-card fade-in">
+      <div class="service-icon">🌿</div>
+      <h3>Orientación y crisis</h3>
+      <p>Sesiones de orientación para momentos de quiebre — duelos, separaciones, decisiones difíciles. Un acompañamiento focalizado cuando más lo necesitás.</p>
+      <div>
+        <span class="service-tag tag-online">Online</span>
+        <span class="service-tag tag-adultos">Adultos</span>
+      </div>
+    </div>
+    <div class="service-card fade-in">
+      <div class="service-icon">🌀</div>
+      <h3>Trabajo con ansiedad</h3>
+      <p>Protocolo especializado para personas que luchan con ansiedad, ataques de pánico, fobias o estrés crónico. Herramientas concretas y comprensión profunda del síntoma.</p>
+      <div>
+        <span class="service-tag tag-online">Online</span>
+        <span class="service-tag tag-presencial">Presencial</span>
+        <span class="service-tag tag-adultos">Adultos</span>
+      </div>
+    </div>
+    <div class="service-card fade-in">
+      <div class="service-icon">🕊️</div>
+      <h3>Duelo y pérdidas</h3>
+      <p>Acompañamiento especializado en procesos de duelo — pérdida de seres queridos, relaciones, identidades o proyectos de vida. Un espacio para llorar, recordar y seguir.</p>
+      <div>
+        <span class="service-tag tag-online">Online</span>
+        <span class="service-tag tag-presencial">Presencial</span>
+        <span class="service-tag tag-adultos">Adultos</span>
+      </div>
+    </div>
+    <div class="service-card fade-in">
+      <div class="service-icon">🔓</div>
+      <h3>Trauma y EMDR</h3>
+      <p>Trabajo con experiencias traumáticas a través de EMDR, una técnica con evidencia científica sólida. Para personas que sienten que el pasado sigue afectando su presente.</p>
+      <div>
+        <span class="service-tag tag-presencial">Presencial</span>
+        <span class="service-tag tag-adultos">Adultos</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ENFOQUES ══ -->
+<section id="enfoques">
+  <p class="section-tag" style="color:var(--terracotta-light)">Enfoques terapéuticos</p>
+  <h2 class="section-title">Las herramientas que<br><em>guían</em> nuestra terapia</h2>
+  <p class="section-lead">No existe un único camino hacia el bienestar. Por eso trabajo de forma integrativa, eligiendo el enfoque que mejor se adapta a vos.</p>
+  <div class="enfoques-grid">
+    <div class="enfoque-card fade-in">
+      <div class="enfoque-number">01</div>
+      <h3>Terapia Cognitivo-Conductual (TCC)</h3>
+      <p>Explora la relación entre pensamientos, emociones y comportamientos. Aprendés a identificar patrones automáticos que generan sufrimiento y a reemplazarlos por respuestas más adaptativas. Es estructurada, práctica y tiene sólida evidencia científica.</p>
+      <div class="enfoque-pills">
+        <span class="enfoque-pill">Ansiedad</span>
+        <span class="enfoque-pill">Depresión</span>
+        <span class="enfoque-pill">Fobias</span>
+        <span class="enfoque-pill">Autoestima</span>
+      </div>
+    </div>
+    <div class="enfoque-card fade-in">
+      <div class="enfoque-number">02</div>
+      <h3>Psicoanálisis & Psicoterapia Psicodinámica</h3>
+      <p>Exploración profunda del mundo interno — deseos, conflictos, historia personal. Se trabaja con lo que no se dice, lo que se repite, los sueños y los vínculos. El objetivo es traer mayor consciencia y libertad interna.</p>
+      <div class="enfoque-pills">
+        <span class="enfoque-pill">Vínculos</span>
+        <span class="enfoque-pill">Identidad</span>
+        <span class="enfoque-pill">Repetición de patrones</span>
+      </div>
+    </div>
+    <div class="enfoque-card fade-in">
+      <div class="enfoque-number">03</div>
+      <h3>EMDR</h3>
+      <p>Eye Movement Desensitization and Reprocessing. Una técnica basada en la estimulación bilateral del cerebro que permite procesar memorias traumáticas atascadas en el sistema nervioso. Especialmente efectiva para trauma y PTSD.</p>
+      <div class="enfoque-pills">
+        <span class="enfoque-pill">Trauma</span>
+        <span class="enfoque-pill">PTSD</span>
+        <span class="enfoque-pill">Apego</span>
+      </div>
+    </div>
+    <div class="enfoque-card fade-in">
+      <div class="enfoque-number">04</div>
+      <h3>Terapia Sistémica & Narrativa</h3>
+      <p>Entiende al individuo en el contexto de sus sistemas — familia, pareja, sociedad. La terapia narrativa invita a reescribir la historia que te contás sobre vos mismo. Ideal para trabajo vincular y resignificación de experiencias.</p>
+      <div class="enfoque-pills">
+        <span class="enfoque-pill">Pareja</span>
+        <span class="enfoque-pill">Familia</span>
+        <span class="enfoque-pill">Rol social</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PODCAST ══ -->
+<section id="podcast">
+  <div class="podcast-header">
+    <div>
+      <p class="section-tag">Podcast</p>
+      <h2 class="section-title">Mente <em>abierta</em></h2>
+      <p class="section-lead">Conversaciones honestas sobre psicología, vínculos y vida cotidiana. Un espacio para pensar juntos.</p>
+    </div>
+    <a href="#" class="btn-outline" style="flex-shrink:0">Ver todos los episodios</a>
+  </div>
+  <div class="podcast-episodes">
+    <div class="episode-card fade-in">
+      <div class="ep-number">01</div>
+      <div class="ep-info">
+        <h4>Por qué te cuesta tanto pedir ayuda</h4>
+        <p>Exploramos el miedo a la vulnerabilidad, la cultura del "estar bien" y por qué pedir ayuda es un acto de valentía y no de debilidad.</p>
+      </div>
+      <div class="ep-meta">
+        <div class="ep-duration">34 min</div>
+        <button class="play-btn" aria-label="Reproducir">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M3 2L11 7L3 12V2Z" fill="white"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="episode-card fade-in">
+      <div class="ep-number">02</div>
+      <div class="ep-info">
+        <h4>Ansiedad: síntoma o mensaje</h4>
+        <p>La ansiedad no es el enemigo. Es una señal. En este episodio entendemos qué hay detrás del malestar y cómo empezar a escucharlo.</p>
+      </div>
+      <div class="ep-meta">
+        <div class="ep-duration">41 min</div>
+        <button class="play-btn" aria-label="Reproducir">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M3 2L11 7L3 12V2Z" fill="white"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="episode-card fade-in">
+      <div class="ep-number">03</div>
+      <div class="ep-info">
+        <h4>El amor que nos enseñaron y el que elegimos</h4>
+        <p>¿Qué modelos de amor recibimos en la infancia? ¿Cómo influyen en cómo amamos hoy? Una conversación sobre apego, heridas y vínculos adultos.</p>
+      </div>
+      <div class="ep-meta">
+        <div class="ep-duration">52 min</div>
+        <button class="play-btn" aria-label="Reproducir">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M3 2L11 7L3 12V2Z" fill="white"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CURSOS ══ -->
+<section id="cursos">
+  <p class="section-tag">Cursos</p>
+  <h2 class="section-title">Aprende a tu <em>ritmo</em></h2>
+  <p class="section-lead">Programas diseñados para que puedas trabajar en tu bienestar de manera autónoma, con acompañamiento y herramientas reales.</p>
+
+  <div class="cursos-intro fade-in">
+    <div>
+      <h3 style="font-family:var(--font-display); font-size:1.4rem; font-weight:400; color:var(--sage-dark); margin-bottom:10px">¿Cómo funciona el acceso a los cursos?</h3>
+      <p style="font-size:.9rem; color:var(--sage-dark); font-weight:300; opacity:.8">Un proceso simple y seguro, de la compra al aprendizaje en pocos minutos.</p>
+      <div class="flow-steps">
+        <div class="flow-step">
+          <div class="flow-icon">🛒</div>
+          <span>Elegís el curso</span>
+        </div>
+        <div class="flow-step">
+          <div class="flow-icon">💳</div>
+          <span>Pagás de forma segura</span>
+        </div>
+        <div class="flow-step">
+          <div class="flow-icon">📧</div>
+          <span>Recibís el acceso por email</span>
+        </div>
+        <div class="flow-step">
+          <div class="flow-icon">▶️</div>
+          <span>Accedés a los videos</span>
+        </div>
+        <div class="flow-step">
+          <div class="flow-icon">✅</div>
+          <span>Avanzás a tu ritmo</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cursos-grid">
+    <div class="curso-card fade-in">
+      <div class="curso-thumb curso-thumb-1">
+        🌀
+        <span class="curso-badge">4 módulos</span>
+      </div>
+      <div class="curso-body">
+        <h3>Gestión emocional desde adentro</h3>
+        <p>Herramientas prácticas para identificar, comprender y regular tus emociones. Basado en TCC y mindfulness. Incluye ejercicios guiados y material descargable.</p>
+        <div class="curso-footer">
+          <div class="curso-price"><sup>$</sup>49</div>
+          <a href="#contacto" class="btn-small">Comprar</a>
+        </div>
+      </div>
+    </div>
+    <div class="curso-card fade-in">
+      <div class="curso-thumb curso-thumb-2">
+        💞
+        <span class="curso-badge">6 módulos</span>
+      </div>
+      <div class="curso-body">
+        <h3>Vínculos conscientes</h3>
+        <p>Para entender tus patrones relacionales, sanar el apego y construir relaciones más sanas y auténticas. Incluye ejercicios de reflexión y trabajo en pareja.</p>
+        <div class="curso-footer">
+          <div class="curso-price"><sup>$</sup>69</div>
+          <a href="#contacto" class="btn-small">Comprar</a>
+        </div>
+      </div>
+    </div>
+    <div class="curso-card fade-in">
+      <div class="curso-thumb curso-thumb-3">
+        ✨
+        <span class="curso-badge">5 módulos</span>
+      </div>
+      <div class="curso-body">
+        <h3>Autoestima que dura</h3>
+        <p>Un programa profundo para reconstruir la relación con vos mismo/a. Más allá de los mantras: trabajo real sobre la autoimagen, el autocuidado y los límites.</p>
+        <div class="curso-footer">
+          <div class="curso-price"><sup>$</sup>59</div>
+          <a href="#contacto" class="btn-small">Comprar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ARTÍCULOS ══ -->
+<section id="articulos">
+  <p class="section-tag">Artículos</p>
+  <h2 class="section-title">Ideas para <em>pensar</em></h2>
+  <p class="section-lead">Reflexiones sobre salud mental, vínculos y la vida cotidiana. Para seguir creciendo más allá del consultorio.</p>
+  <div class="articulos-grid">
+    <a href="#" class="articulo-card fade-in">
+      <div class="art-category">Ansiedad</div>
+      <h3>El cuerpo también habla: señales físicas que son emocionales</h3>
+      <p>Muchas veces el cuerpo expresa lo que la mente no puede verbalizar. Aprender a escucharlo es el primer paso para entender lo que sentimos.</p>
+      <div class="art-meta">8 min de lectura · Enero 2025</div>
+    </a>
+    <a href="#" class="articulo-card fade-in">
+      <div class="art-category">Vínculos</div>
+      <h3>Por qué seguimos eligiendo lo que nos daña — y cómo salir</h3>
+      <p>Los patrones relacionales no son casualidad. Vienen de lejos, de aprendizajes tempranos. Y se pueden cambiar con consciencia y trabajo.</p>
+      <div class="art-meta">10 min de lectura · Diciembre 2024</div>
+    </a>
+    <a href="#" class="articulo-card fade-in">
+      <div class="art-category">Bienestar</div>
+      <h3>La diferencia entre estar bien y fingir que estás bien</h3>
+      <p>En la cultura del positivismo tóxico, a veces la salud mental real queda invisibilizada. ¿Cómo distinguir entre resiliencia genuina y supresión emocional?</p>
+      <div class="art-meta">7 min de lectura · Noviembre 2024</div>
+    </a>
+  </div>
+</section>
+
+<!-- ══ CONTACTO ══ -->
+<section id="contacto">
+  <p class="section-tag">Contacto</p>
+  <h2 class="section-title">Empecemos a<br><em>caminar juntos</em></h2>
+  <p class="section-lead">Si llegaste hasta acá, algo resonó. Escribime sin compromiso — la primera sesión es de conocimiento mutuo, sin presión.</p>
+  <div class="contact-grid">
+    <div class="contact-info fade-in">
+      <h3>Primera consulta gratuita</h3>
+      <p>Ofrezco una llamada de 15 minutos sin costo para que puedas conocerme, contarme brevemente lo que estás atravesando y evaluar juntos si somos un buen match terapéutico.</p>
+
+      <h3>Atención por WhatsApp</h3>
+      <p>Respondí consultas de lunes a viernes, de 9 a 18 hs.</p>
+      <a href="https://wa.me/5491123456789?text=Hola%20Valentina%2C%20me%20gustar%C3%ADa%20consultar%20sobre%20tus%20servicios" class="contact-link wa-link" target="_blank" rel="noopener">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Escribime por WhatsApp
+      </a>
+
+      <h3>Seguime en redes</h3>
+      <p>Contenido semanal sobre bienestar emocional, herramientas de autocuidado y reflexiones sobre salud mental.</p>
+      <div class="social-links">
+        <a href="#" class="social-link" aria-label="Instagram">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="#" class="social-link" aria-label="LinkedIn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="#" class="social-link" aria-label="YouTube">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+        </a>
+        <a href="#" class="social-link" aria-label="Spotify">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="fade-in">
+      <form class="contact-form" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" placeholder="Tu nombre" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="tu@email.com" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="motivo">¿Qué te trae por acá?</label>
+          <select id="motivo">
+            <option value="">Seleccioná una opción</option>
+            <option>Consulta sobre terapia individual</option>
+            <option>Consulta sobre terapia de pareja</option>
+            <option>Información sobre cursos</option>
+            <option>Consulta general</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="mensaje">Contame un poco</label>
+          <textarea id="mensaje" rows="5" placeholder="No hace falta que sea perfecto. Escribí lo que sientas..." required></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Enviar mensaje 🌿</button>
+        <div id="form-success" style="display:none; color:var(--sage-dark); font-size:.88rem; margin-top:8px">
+          ¡Gracias por escribirme! Te respondo en menos de 24 horas. 💚
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div>
+    <div class="footer-logo">Valentina <span>Ríos</span></div>
+    <p style="margin-top:8px; font-size:.78rem;">Lic. en Psicología · Mat. N° 12345</p>
+  </div>
+  <nav class="footer-links">
+    <a href="#sobre-mi">Sobre mí</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#podcast">Podcast</a>
+    <a href="#cursos">Cursos</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+  <p style="font-size:.75rem; text-align:right;">© 2025 Valentina Ríos<br>Diseñado con ♥ en Argentina</p>
+</footer>
+
+<script>
+  // Intersection Observer for fade-ins
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Stagger cards in grids
+  document.querySelectorAll('.services-grid .service-card, .articulos-grid .articulo-card, .cursos-grid .curso-card').forEach((el, i) => {
+    el.style.transitionDelay = (i * 0.08) + 's';
+  });
+
+  // Sticky nav shrink
+  window.addEventListener('scroll', () => {
+    document.querySelector('nav').style.padding =
+      window.scrollY > 50 ? '12px 60px' : '20px 60px';
+  });
+
+  // Form submit
+  function handleSubmit(e) {
+    e.preventDefault();
+    document.getElementById('form-success').style.display = 'block';
+    e.target.reset();
+    setTimeout(() => {
+      document.getElementById('form-success').style.display = 'none';
+    }, 5000);
+  }
+</script>
+</body>
+</html>
